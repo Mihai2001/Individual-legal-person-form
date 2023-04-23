@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formular</title>
+    <meta name="description" content="description" />
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <style type="text/css"></style>
+  </head>
+  <body>
+
+    <div class="form-container">
+      <form id="forms">
+        <h1 class="title">Formular interviu SEO Factory</h1>
+        <div id="personType">
+          <label for="person-type" style="font-size: large;">Tipul Persoanei:</label>
+          <select id="person-type" onchange="changeInputs()">
+            <option value="fizica">Persoana Fizica</option>
+            <option value="juridica">Persoana Juridica</option>
+          </select>
+        </div>
+
+        <div id="person-fizica">
+          <label for="nume">Nume:</label>
+          <input
+            type="text"
+            id="nume"
+            name="nume" 
+            placeholder="Introdu nume"
+            oninvalid="this.setCustomValidity('Introdu numele tau aici!')"
+            oninput="this.setCustomValidity('')"
+          />
+
+          <label for="prenume">Prenume:</label>
+          <input
+            type="text"
+            id="prenume"
+            name="prenume"     
+            placeholder="Introdu prenume"
+            oninvalid="this.setCustomValidity('Introdu prenumele tau aici!')"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <div id="person-juridica" style="display: none">
+          <label for="nume-companie">Nume Companie:</label>
+          <input
+            type="text"
+            id="nume-companie"
+            name="nume-companie"
+            placeholder="Introdu numele companiei"
+            oninvalid="this.setCustomValidity('Introdu numele companiei aici!')"
+            oninput="this.setCustomValidity('')"
+          />
+
+          <label for="cui">CUI:</label>
+          <input
+            type="text"
+            id="cui"
+            name="cui"
+           
+            
+            placeholder="Introdu CUI-ul"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          required
+      
+          placeholder="Introdu Email"
+          oninvalid="this.setCustomValidity('Introdu Email-ul tau aici!')"
+          oninput="this.setCustomValidity('')"
+        />
+
+        <label for="telefon">Telefon:</label>
+        <input
+          type="text"
+          id="telefon"
+          name="telefon"
+          required
+          placeholder="Introdu numar de telefon"
+          oninvalid="this.setCustomValidity('Introdu numarul tau de telefon!')"
+          oninput="this.setCustomValidity('')"
+        />
+
+        <label for="mesaj">Mesaj:</label>
+        <textarea id="mesaj" name="mesaj"></textarea>
+        <label for="file" class="custom-file-upload">Alegeti fisier: </label>
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept="image/*,application/pdf"
+        />
+        <button type="button" id="deleteFile">Stergeti fisier</button>
+        <button class="submit-button" type="submit">Trimite</button>
+      </form>
+    </div>
+
+
+    <!---Scripts-->
+    <script src="changeInputs.js"></script>
+    <script src="deleteFiles.js"></script>
+    <script src="Data.js"></script>
+    <script src="validare.js"></script>
+    <!---END-Scripts-->
+  </body>
+</html>
